@@ -2,27 +2,29 @@ import "./App.css";
 import styled from "styled-components";
 import Canvas, { type SplatConfig } from "./components/Canvas/Canvas";
 
+const BASE = import.meta.env.BASE_URL;
+
 const SPLATS: SplatConfig[] = [
 	{
-		src: `/splats/spiderman/1.ply`,
+		src: `${BASE}splats/spiderman/1.ply`,
 		initialPosition: [0, -0.0, 0],
 		rotation: [0, 180, 180],
 		startZ: 0.1,
 		endZ: -0.1,
-		imageSrc: `/spiderverse.png`,
+		imageSrc: `${BASE}spiderverse.png`,
 	},
 	{
-		src: `/splats/spiderman/2.ply`,
+		src: `${BASE}splats/spiderman/2.ply`,
 		initialPosition: [0, 0.01, 0],
 		rotation: [5, 185, 0],
 		startZ: 0.2,
 		endZ: -0.1,
-		imageSrc: `/spiderman.png`,
+		imageSrc: `${BASE}spiderman.png`,
 		imageInitialPosition: [0, 0.22, -1.0],
 		imageScale: [0.15, 0.15, 0.15],
 	},
 	{
-		src: `/splats/spiderman/3.ply`,
+		src: `${BASE}splats/spiderman/3.ply`,
 		initialPosition: [-0.01, 0.02, 0],
 		rotation: [0, 180, 0],
 		startZ: 0.055,
