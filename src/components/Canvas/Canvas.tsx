@@ -53,7 +53,6 @@ export default function Canvas({
 			<CanvasWrapper>
 				{canvasReady && (
 					<Application
-						autoRender={false}
 						fillMode={FILLMODE_FILL_WINDOW}
 						resolutionMode={RESOLUTION_AUTO}
 						graphicsDeviceOptions={{
@@ -277,6 +276,9 @@ function Scene({
 }: SceneProps) {
 	const cameraEntityRef = useRef<pc.Entity | null>(null);
 	const app = useApp();
+	useEffect(() => {
+		if (app) app.autoRender = false;
+	}, [app]);
 	const imageOpacity = useMotionValue(0);
 	const imagePositionY = useMotionValue(0.125); // Start at base y position
 
